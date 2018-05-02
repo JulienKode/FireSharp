@@ -264,8 +264,8 @@ namespace FireSharp
             try
             {
                 QueryBuilder queryBuilder = QueryBuilder.New(
-                $@"&email={Uri.EscapeDataString(email)}&password={Uri.EscapeDataString(password)}&_method=POST&v=node-2.3.2&transport=json&suppress_status_codes=true");
-                var path = "users";
+                $@"&email={Uri.EscapeDataString(email)}&password={Uri.EscapeDataString(password)}&_method=POST&v=node-2.3.2&transport=json&suppress_status_codes=true&returnSecureToken=true");
+                var path = "signupNewUser";
 
                 var response = _requestManager.RequestApiAsync(HttpMethod.Post, path, queryBuilder).Result;
                 var content = response.Content.ReadAsStringAsync().Result;
